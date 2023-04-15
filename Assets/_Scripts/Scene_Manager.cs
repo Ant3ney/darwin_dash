@@ -20,7 +20,7 @@ public class Scene_Manager : MonoBehaviour
     [HideInInspector]
     public static float platformer_time = 100f;
 
-    private void Awake()
+    /* private void Awake()
     {
         manageSingleton();
     }
@@ -47,7 +47,7 @@ public class Scene_Manager : MonoBehaviour
         {
             Instance.platformer_time -= time;
         }
-    }
+    } */
 
     void manageSingleton(){
         if (_instance != null && _instance != this)
