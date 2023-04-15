@@ -29,9 +29,4 @@ public class Scene_Manager : MonoBehaviour
             _instance = this;
         }
     }
-    
-    public static void loadScene(string sceneName)
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
-    }
 }
