@@ -14,9 +14,36 @@ public class Scene_Manager : MonoBehaviour
     public float highScore = 0;
     const string HIGH_SCORE_KEY = "highScore";
 
+    public float math_time = 100f;
+    public float platformer_time = 100f;
+
     private void Awake()
     {
         manageSingleton();
+    }
+
+    public static void add_time(string gameType, float time)
+    {
+        if (gameType == "math")
+        {
+            Instance.math_time += time;
+        }
+        else if (gameType == "platformer")
+        {
+            Instance.platformer_time += time;
+        }
+    } 
+
+    public static void subtract_time(string gameType, float time)
+    {
+        if (gameType == "math")
+        {
+            Instance.math_time -= time;
+        }
+        else if (gameType == "platformer")
+        {
+            Instance.platformer_time -= time;
+        }
     }
 
     void manageSingleton(){
