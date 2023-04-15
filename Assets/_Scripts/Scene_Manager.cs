@@ -42,15 +42,15 @@ public class Scene_Manager : MonoBehaviour
         }
     } 
 
-    public static void subtract_time(string gameType, float time)
+    public static void getTime(string gameType)
     {
         if (gameType == "math")
         {
-            math_time -= time;
+            math_time = PlayerPrefs.GetFloat("math_time");
         }
         else if (gameType == "platformer")
         {
-            platformer_time -= time;
+            platformer_time = PlayerPrefs.GetFloat("platformer_time");
         }
     }
 
