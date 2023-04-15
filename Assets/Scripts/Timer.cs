@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     public Text timeText;
 
     void Update() {
-        if (Time_to_set => 0)
+        if (Time_to_set > 0)
         {
             Time_to_set -= Time.deltaTime;
 
