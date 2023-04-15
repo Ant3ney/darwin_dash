@@ -20,7 +20,7 @@ public class Scene_Manager : MonoBehaviour
     [HideInInspector]
     public static float platformer_time = 100f;
 
-    /* private void Awake()
+    private void Awake()
     {
         manageSingleton();
     }
@@ -29,11 +29,11 @@ public class Scene_Manager : MonoBehaviour
     {
         if (gameType == "math")
         {
-            Instance.math_time += time;
+            math_time += time;
         }
         else if (gameType == "platformer")
         {
-            Instance.platformer_time += time;
+            platformer_time += time;
         }
     } 
 
@@ -41,13 +41,13 @@ public class Scene_Manager : MonoBehaviour
     {
         if (gameType == "math")
         {
-            Instance.math_time -= time;
+            math_time -= time;
         }
         else if (gameType == "platformer")
         {
-            Instance.platformer_time -= time;
+            platformer_time -= time;
         }
-    } */
+    }
 
     void manageSingleton(){
         if (_instance != null && _instance != this)
