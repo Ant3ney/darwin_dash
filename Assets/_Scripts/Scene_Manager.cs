@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Scene_Manager : MonoBehaviour
 {
+    [HideInInspector]
+    public static Scene_Manager Instance { get { return _instance; } }
    // Implement a singleton pattern
     private static Scene_Manager _instance;
-    public static Scene_Manager Instance { get { return _instance; } }
 
     // format for mathtype: "mathType_numDigits"
     public static string mathType = "addition_1";
