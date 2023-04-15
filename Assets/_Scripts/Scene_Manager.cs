@@ -10,13 +10,43 @@ public class Scene_Manager : MonoBehaviour
     private static Scene_Manager _instance;
 
     // format for mathtype: "mathType_numDigits"
+    [HideInInspector]
     public static string mathType = "addition_1";
-    public float highScore = 0;
-    const string HIGH_SCORE_KEY = "highScore";
+    [HideInInspector]
+    public static float highScore = 0;
+    static string HIGH_SCORE_KEY = "highScore";
+    [HideInInspector]
+    public static float math_time = 100f;
+    [HideInInspector]
+    public static float platformer_time = 100f;
 
     private void Awake()
     {
         manageSingleton();
+    }
+
+    public static void add_time(string gameType, float time)
+    {
+        if (gameType == "math")
+        {
+            math_time += time;
+        }
+        else if (gameType == "platformer")
+        {
+            platformer_time += time;
+        }
+    } 
+
+    public static void subtract_time(string gameType, float time)
+    {
+        if (gameType == "math")
+        {
+            math_time -= time;
+        }
+        else if (gameType == "platformer")
+        {
+            platformer_time -= time;
+        }
     }
 
     void manageSingleton(){
