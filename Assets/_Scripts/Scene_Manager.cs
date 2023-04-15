@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class Scene_Manager : MonoBehaviour
 {
@@ -16,9 +19,11 @@ public class Scene_Manager : MonoBehaviour
     public static float highScore = 0;
     static string HIGH_SCORE_KEY = "highScore";
     [HideInInspector]
-    public static float math_time = 100f;
+    public static float math_time ;
     [HideInInspector]
-    public static float platformer_time = 100f;
+    public static float platformer_time = -3;
+    
+    public Text timeText;
 
     private void Awake()
     {
@@ -59,4 +64,44 @@ public class Scene_Manager : MonoBehaviour
             _instance = this;
         }
     }
+
+   
+
+    void Update()
+    {
+
+        if (platformer_time == -3) {
+            platformer_time = 100f;
+        }
+        if (platformer_time > 0)
+        {
+            platformer_time -= Time.deltaTime;
+
+        }
+        else
+        {
+            platformer_time = 60;
+        }
+
+        DisplayTime(platformer_time);
+
+    }
+
+    void DisplayTime(float time_edit)
+    {
+        if (time_edit < 0)
+        {
+            time_edit = 0;
+        }
+
+        float Minuites = Mathf.FloorToInt(time_edit / 60);
+        float Seconds = Mathf.FloorToInt(time_edit % 60);
+
+        timeText.text = string.Format("{0:00}:{1:00}", Minuites, Seconds);
+
+    }
+
+
+
+
 }
