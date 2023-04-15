@@ -73,7 +73,7 @@ public class Scene_Manager : MonoBehaviour
         if (platformer_time == -3) {
             platformer_time = 8f;
         }
-        if (platformer_time < 5 && platformer_time >0) {
+        if (platformer_time < 1 && platformer_time >0) {
             SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
         }
         if (platformer_time > 0)
@@ -81,7 +81,6 @@ public class Scene_Manager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings- 1);
         }
 
         DisplayTime(platformer_time);
@@ -103,7 +102,6 @@ public class Scene_Manager : MonoBehaviour
 
     }
 
+    }
 
 
-
-}
