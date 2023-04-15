@@ -10,12 +10,15 @@ public class Scene_Manager : MonoBehaviour
     private static Scene_Manager _instance;
 
     // format for mathtype: "mathType_numDigits"
+    [HideInInspector]
     public static string mathType = "addition_1";
-    public float highScore = 0;
-    const string HIGH_SCORE_KEY = "highScore";
-
-    public float math_time = 100f;
-    public float platformer_time = 100f;
+    [HideInInspector]
+    public static float highScore = 0;
+    static string HIGH_SCORE_KEY = "highScore";
+    [HideInInspector]
+    public static float math_time = 100f;
+    [HideInInspector]
+    public static float platformer_time = 100f;
 
     private void Awake()
     {
