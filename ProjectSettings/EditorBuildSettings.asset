@@ -9,6 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Star_menu.unity
     guid: 5eb8c8f1a800aee41963b8bcd704ee65
   - enabled: 1
+    path: Assets/Scenes/MathQuestionScene.unity
+    guid: f0119b0d674ccd14b84013e1284ddada
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Math_Scene.unity
+    guid: 4b92886136c3a224fbb0137c4555126f
+  - enabled: 1
+    path: Assets/Scenes/Platforming_1_m.unity
+    guid: 076bb8f3df282924f9cda46511da66da
+  - enabled: 1
+    path: Assets/Scenes/ForrestTestingScene.unity
+    guid: 6b56d23e6bd5e264380a56d09f260eee
   m_configObjects: {}
