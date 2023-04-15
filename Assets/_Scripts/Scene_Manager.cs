@@ -4,19 +4,28 @@ using UnityEngine;
 
 public class Scene_Manager : MonoBehaviour
 {
-   /// <summary>
-   /// This is a basic template for a C# script in Unity, with empty Start and Update functions.
-   /// </summary>
-    
-    // Start is called before the first frame update
-    void Start()
+   // Implement a singleton pattern
+    private static Scene_Manager _instance;
+    public static Scene_Manager Instance { get { return _instance; } }
+
+    private void Awake()
     {
-        
+        manageSingleton();
     }
 
-    // Update is called once per frame
-    void Update()
+    void manageSingleton(){
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
+    
+    public static void loadScene(string sceneName)
     {
-        
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
 }
