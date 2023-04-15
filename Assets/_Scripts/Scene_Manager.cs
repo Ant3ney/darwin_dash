@@ -71,19 +71,21 @@ public class Scene_Manager : MonoBehaviour
     {
 
         if (platformer_time == -3) {
-            platformer_time = 100f;
+            platformer_time = 8f;
+        }
+        if (platformer_time < 5 && platformer_time >0) {
+            SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
         }
         if (platformer_time > 0)
-        {
-            platformer_time -= Time.deltaTime;
-
+        { platformer_time -= Time.deltaTime;
         }
         else
         {
-            platformer_time = 60;
+            SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings- 1);
         }
 
         DisplayTime(platformer_time);
+
 
     }
 
