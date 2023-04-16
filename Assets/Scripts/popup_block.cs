@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class popup_block : MonoBehaviour
 {
-    BoxCollider2D boxCollider;
+  //  BoxCollider2D boxCollider;
     
-    void Start(){
-        boxCollider = GetComponent<BoxCollider2D>();
-    }
+    //void Start(){
+      //  boxCollider = GetComponent<BoxCollider2D>();
+    //}
 
-    void Update(){
+    /*void Update(){
         Collider2D[] collisions = Physics2D.OverlapBoxAll(transform.position, boxCollider.size, 0);
 
         foreach (Collider2D hit_collision in collisions){
@@ -24,5 +24,5 @@ public class popup_block : MonoBehaviour
             if (colliderDistance.isOverlapped && hit.gameObject.tag == "Bullet")
                 bulletInMe(hit.gameObject.GetComponent<Bullet>());
         }
-    }
+    }*/
 }
