@@ -42,11 +42,23 @@ public class Player_movement : MonoBehaviour
     public float groundLength = 1f;
     public Vector3 colliderOffset;
 
+    [Header("Dev")]
+    public bool devMode = false;
+    public string playerModel = "darwin";
+
     void Start() {
         respawnPoint = transform.position;
         rb = GetComponent<Rigidbody2D>();
         playerPreview = GetComponent<SpriteRenderer>();
         playerPreview.enabled = false;
+        if (devMode) {
+            if(playerModel == "darwin"){
+
+            }
+            else{
+                
+            }
+        }
     }
 
     private void Awake()
