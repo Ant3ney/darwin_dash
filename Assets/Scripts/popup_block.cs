@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class popup_block : MonoBehaviour
 {
+    BoxCollider2D boxCollider;
     
+    void Start(){
+        boxCollider = GetComponent<BoxCollider2D>();
+    }
+
     void Update(){
         Collider2D[] collisions = Physics2D.OverlapBoxAll(transform.position, boxCollider.size, 0);
 
-        foreach (Collider2D hit in hits){
+        foreach (Collider2D hit_collision in collisions){
             
-        	if (hit == boxCollider)  // Ignore collision with self
+        	if (hit_collision == boxCollider)  // Ignore collision with self
         	continue;
 
             // Get the distance between the two colliders
