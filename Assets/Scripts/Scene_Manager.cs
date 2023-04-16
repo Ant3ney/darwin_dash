@@ -83,16 +83,15 @@ public class Scene_Manager : MonoBehaviour
         // while(currScene == randomInt) {
         //     randomInt = Random.Range(2, numberOfLevels-1);
         // }
-        int nextScene;
         if (currScene == numberOfLevels-1) {
-            nextScene = 2;
+            currScene = 2;
         }
         else {
-            nextScene = currScene++;
+            currScene++;
         }
         add_highScore(4f * Scene_Manager.getTime());
         
-        SceneManager.LoadScene(nextScene);
+        SceneManager.LoadScene(currScene);
     }
 
     void Update()
