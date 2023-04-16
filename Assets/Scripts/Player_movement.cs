@@ -177,7 +177,12 @@ public class Player_movement : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         jumpTimer = 0;
-        audioSource.clip = audioSource.Play();
+        PlayAudio();
+
+    }
+    public void PlayAudio() {
+        Debug.Log("PLAY");
+        audioSource.Play();
     }
     void modifyPhysics(){
         bool changingDirection = (direction.x > 0 && rb.velocity.x < 0) || (direction.x < 0 && rb.velocity.x > 0);
