@@ -3,18 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Text;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Send_High_Score : MonoBehaviour
 {
+    public delegate void highScoreSent(string status);
+    public static event highScoreSent onHighScoreSent;
+    Text answerInputFelid;
+
+    void Start()
+    {
+        answerInputFelid = GameObject.Find("user_input_feild").GetComponent<Text>();
+    }
     void Awake(){
         /* send_The_High_Score("ANT", 100000); */
     }
+    
     /* public delegate void highScoreSent(string status);
     public static event highScoreSent onHighScoreSent; */
-    void Start()
+
+
+
+    public  void submitAnswer()
     {
-        
+            send_The_High_Score(answerInputFelid.text, Scene_Manager.get_highscore() );
     }
+
+
+
+
+
 
     public void send_The_High_Score(string userInitials, float score)
     {
@@ -45,5 +64,4 @@ public class Send_High_Score : MonoBehaviour
                 /*  if(onHighScoreSent != null) onHighScoreSent("fail"); */
             }
         }
-    }
-}
+    }}
