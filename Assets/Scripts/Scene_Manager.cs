@@ -70,7 +70,7 @@ public class Scene_Manager : MonoBehaviour
     void Update()
     {
 
-        if (platformer_time < 1 && SceneManager.GetActiveScene().buildIndex > 1) {
+        if (shouldLoadGameOver()) {
             SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
         
         }
@@ -87,6 +87,10 @@ public class Scene_Manager : MonoBehaviour
 
 
 
+    }
+
+    bool shouldLoadGameOver(){
+        return platformer_time < 1 && SceneManager.GetActiveScene().buildIndex > 1 && (SceneManager.GetActiveScene().buildIndex != (SceneManager.sceneCountInBuildSettings - 1));
     }
 
     void DisplayTime(float time_edit)
