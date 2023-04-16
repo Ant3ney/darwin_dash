@@ -30,16 +30,10 @@ public class Scene_Manager : MonoBehaviour
         manageSingleton();
     }
 
-    public static void add_time(string gameType, float time)
+    public static void add_time(float time)
     {
-        if (gameType == "math")
-        {
-            math_time += time;
-        }
-        else if (gameType == "platformer")
-        {
             platformer_time += time;
-        }
+    
     } 
 
     public static void getTime(string gameType)
@@ -71,7 +65,7 @@ public class Scene_Manager : MonoBehaviour
     {
 
         if (platformer_time == -3) {
-            platformer_time = 8f;
+            platformer_time = 140f;
         }
         if (platformer_time < 1 && platformer_time >0) {
             SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);

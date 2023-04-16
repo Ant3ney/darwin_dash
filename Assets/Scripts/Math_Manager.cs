@@ -53,10 +53,12 @@ public class Math_Manager : MonoBehaviour
             status_text.text = "Correct!";
             setStatusActive();
             displayNextProblem();
+            Scene_Manager.add_time(1510);
         } else {
             status_text.text = "Incorrect!";
             setStatusActive();
             displayNextProblem();
+            Scene_Manager.add_time(-15);
         }
     }
 
