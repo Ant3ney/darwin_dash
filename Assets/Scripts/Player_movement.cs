@@ -61,6 +61,9 @@ public class Player_movement : MonoBehaviour
                 animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("knome_animations/knome_animations", typeof(RuntimeAnimatorController));
             }
         }
+        
+        if (Random.Range(0, 2) == 0) makeDarwin();
+        else makeKnome();
     }
 
     private void Awake()
@@ -99,7 +102,6 @@ public class Player_movement : MonoBehaviour
 
     void moveCharacter(float horizontal){
         rb.AddForce(Vector2.right * horizontal * moveSpeed);
-
         
         if((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight))
             Flip();
@@ -112,7 +114,6 @@ public class Player_movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        
          moveCharacter(direction.x);
        
         if(jumpTimer > Time.time && onGround) Jump();
@@ -152,7 +153,7 @@ public class Player_movement : MonoBehaviour
 
         if(collision.tag == "Finsih_line")
         {
-            int numberOfLevels = SceneManager.sceneCountInBuildSettings;
+            /* int numberOfLevels = SceneManager.sceneCountInBuildSettings;
             int randomInt = Random.Range(2, numberOfLevels-1);
             int currScene = SceneManager.GetActiveScene().buildIndex;
 
@@ -163,7 +164,8 @@ public class Player_movement : MonoBehaviour
             
             Scene_Manager.add_highScore(4f * Scene_Manager.getTime());
             
-            SceneManager.LoadScene(randomInt);
+            SceneManager.LoadScene(randomInt); */
+            Scene_Manager.loadNewPlatformerScene();
         }
     }
     void Jump(){
