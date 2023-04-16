@@ -49,10 +49,7 @@ public class Player_movement : MonoBehaviour
 
     void Start() {
 
-        if(!TryGetComponent<AudioSource>(out audioSource)) {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
-        audioSource.clip = audioClip;
+        audioSource = gameObject.GetComponent<AudioSource>();
         respawnPoint = transform.position;
         rb = GetComponent<Rigidbody2D>();
         playerPreview = GetComponent<SpriteRenderer>();
