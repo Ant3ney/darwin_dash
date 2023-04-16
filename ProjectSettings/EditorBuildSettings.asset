@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/World_2-6.unity
     guid: 2a6d90cc0b6c8324a9c76466db64463f
   - enabled: 1
+    path: Assets/Scenes/World_2-7.unity
+    guid: 81c33eb5ebea14a46aaa18c323b237eb
+  - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: 6b56d23e6bd5e264380a56d09f260eee
   m_configObjects: {}
