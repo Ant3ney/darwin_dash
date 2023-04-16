@@ -14,7 +14,8 @@ public class Send_High_Score : MonoBehaviour
 
     void Start()
     {
-        answerInputFelid = GameObject.Find("user_input_feild").GetComponent<Text>();
+        if(GameObject.Find("user_input_feild"))
+            answerInputFelid = GameObject.Find("user_input_feild").GetComponent<Text>();
     }
     void Awake(){
         /* send_The_High_Score("ANT", 100000); */
