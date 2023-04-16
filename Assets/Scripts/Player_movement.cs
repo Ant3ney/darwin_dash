@@ -47,6 +47,7 @@ public class Player_movement : MonoBehaviour
     public string playerModel = "darwin";
 
     void Start() {
+        
         respawnPoint = transform.position;
         rb = GetComponent<Rigidbody2D>();
         playerPreview = GetComponent<SpriteRenderer>();
@@ -138,6 +139,9 @@ public class Player_movement : MonoBehaviour
             rb.AddForce(move * moveSpeed);
         }
     }
+    
+    
+
 
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "KillZone") {
@@ -148,8 +152,17 @@ public class Player_movement : MonoBehaviour
 
         if(collision.tag == "Finsih_line")
         {
-            int randomInt = Random.Range(2, SceneManager.sceneCountInBuildSettings - 2);
+            int numberOfLevels = SceneManager.sceneCountInBuildSettings;
+            int randomInt = Random.Range(2, numberOfLevels-1);
+            int currScene = SceneManager.GetActiveScene().buildIndex;
+
+            while(currScene == randomInt) {
+                randomInt = Random.Range(2, numberOfLevels-1);
+            }
+        
+            
             Scene_Manager.add_highScore(4f * Scene_Manager.getTime());
+            
             SceneManager.LoadScene(randomInt);
         }
     }
