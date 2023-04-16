@@ -240,6 +240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneTile_2
       objectReference: {fileID: 0}
+    - target: {fileID: 5257752328983344476, guid: 7d2d2122db2ab8c44b4e6fea065692c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5257752328983344477, guid: 7d2d2122db2ab8c44b4e6fea065692c9, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -428,6 +432,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneTile_0 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2530685329770595064, guid: f60689ae6383c4248bda4b41dacb123e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2530685329770595066, guid: f60689ae6383c4248bda4b41dacb123e, type: 3}
       propertyPath: m_Size.x
       value: 81.92
@@ -580,6 +588,71 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c52d1a917163014fbd493502bce8928, type: 3}
+--- !u!1001 &1886608049
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2906221172458033748, guid: 529ecdb72abae244a8cd1a4b1b7cb085, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906221172458033749, guid: 529ecdb72abae244a8cd1a4b1b7cb085, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906221172458033749, guid: 529ecdb72abae244a8cd1a4b1b7cb085, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906221172458033749, guid: 529ecdb72abae244a8cd1a4b1b7cb085, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906221172458033749, guid: 529ecdb72abae244a8cd1a4b1b7cb085, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906221172458033749, guid: 529ecdb72abae244a8cd1a4b1b7cb085, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906221172458033749, guid: 529ecdb72abae244a8cd1a4b1b7cb085, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906221172458033749, guid: 529ecdb72abae244a8cd1a4b1b7cb085, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906221172458033749, guid: 529ecdb72abae244a8cd1a4b1b7cb085, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906221172458033749, guid: 529ecdb72abae244a8cd1a4b1b7cb085, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906221172458033749, guid: 529ecdb72abae244a8cd1a4b1b7cb085, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906221172458033749, guid: 529ecdb72abae244a8cd1a4b1b7cb085, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906221172458033750, guid: 529ecdb72abae244a8cd1a4b1b7cb085, type: 3}
+      propertyPath: m_Name
+      value: Brickwhite 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906221172458033751, guid: 529ecdb72abae244a8cd1a4b1b7cb085, type: 3}
+      propertyPath: m_AutoTiling
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 529ecdb72abae244a8cd1a4b1b7cb085, type: 3}
 --- !u!1001 &1893695904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -638,6 +711,10 @@ PrefabInstance:
     - target: {fileID: 2530685329770595064, guid: f60689ae6383c4248bda4b41dacb123e, type: 3}
       propertyPath: m_Name
       value: StoneTile_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530685329770595064, guid: f60689ae6383c4248bda4b41dacb123e, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2530685329770595066, guid: f60689ae6383c4248bda4b41dacb123e, type: 3}
       propertyPath: m_Size.x
@@ -748,7 +825,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2086807141
 MonoBehaviour:
