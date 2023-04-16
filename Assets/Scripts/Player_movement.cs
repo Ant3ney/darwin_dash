@@ -51,12 +51,13 @@ public class Player_movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerPreview = GetComponent<SpriteRenderer>();
         playerPreview.enabled = false;
+        
         if (devMode) {
             if(playerModel == "darwin"){
-
+                animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("darwin_turtle/darwin", typeof(RuntimeAnimatorController));
             }
             else{
-                
+                animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("knome_animations/knome_animations", typeof(RuntimeAnimatorController));
             }
         }
     }
@@ -85,6 +86,14 @@ public class Player_movement : MonoBehaviour
         }
 
         direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+    }
+
+    public void makeDarwin(){
+        animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("darwin_turtle/darwin", typeof(RuntimeAnimatorController));
+    }
+
+    public void makeKnome(){
+        animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("knome_animations/knome_animations", typeof(RuntimeAnimatorController));
     }
 
     void moveCharacter(float horizontal){
@@ -140,7 +149,7 @@ public class Player_movement : MonoBehaviour
         if(collision.tag == "Finsih_line")
         {
             int randomInt = Random.Range(2, SceneManager.sceneCountInBuildSettings - 2);
-            Scene_Manager.add_highScore(3.14f * Scene_Manager.getTime());
+            Scene_Manager.add_highScore(4f * Scene_Manager.getTime());
             SceneManager.LoadScene(randomInt);
         }
     }
