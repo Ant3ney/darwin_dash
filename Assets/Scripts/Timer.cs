@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
@@ -22,8 +23,9 @@ public class Timer : MonoBehaviour
     }
 
     void DisplayTime(float time_edit) {
-        if (time_edit < 0) { 
+        if (time_edit < 1) { 
             time_edit = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         float Minuites = Mathf.FloorToInt(time_edit / 60);

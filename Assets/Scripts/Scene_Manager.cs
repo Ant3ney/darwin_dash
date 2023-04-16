@@ -95,10 +95,17 @@ public class Scene_Manager : MonoBehaviour
             time_edit = 0;
         }
 
-        float Minuites = Mathf.FloorToInt(time_edit / 60);
-        float Seconds = Mathf.FloorToInt(time_edit % 60);
+        if (SceneManager.GetActiveScene().buildIndex != 1) {
+            float Minuites = Mathf.FloorToInt(time_edit / 60);
+            float Seconds = Mathf.FloorToInt(time_edit % 60);
 
-        if (timeText) timeText.text = string.Format("{0:00}:{1:00}", Minuites, Seconds);
+            if (timeText) timeText.text = string.Format("{0:00}:{1:00}", Minuites, Seconds);
+        }
+        else {
+            float Seconds = Mathf.FloorToInt(time_edit);
+            if (timeText)timeText.text = string.Format("{00}", Seconds);
+        }
+
 
     }
 
