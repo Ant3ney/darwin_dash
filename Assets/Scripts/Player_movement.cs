@@ -15,7 +15,8 @@ public class Player_movement : MonoBehaviour
     private Vector3 respawnPoint;
     public GameObject FallDetector;
     public AudioClip audioClip;
-    private AudioSource audioSource;
+    private AudioSource jumpAudio;
+    AudioSource deathAudio;
     public Animator animator;
 
     [Header("Horizontal Movement")]
@@ -49,7 +50,10 @@ public class Player_movement : MonoBehaviour
 
     void Start() {
 
-        audioSource = gameObject.GetComponent<AudioSource>();
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        jumpAudio = audioSources[0];
+        deathAudio = audioSources[1];
+        
         respawnPoint = transform.position;
         rb = GetComponent<Rigidbody2D>();
         playerPreview = GetComponent<SpriteRenderer>();
@@ -149,6 +153,7 @@ public class Player_movement : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "KillZone") {
             transform.position = respawnPoint;
+            deathAudio.Play();
             Scene_Manager.add_time(-15);
             Scene_Manager.add_highScore(-100);
         }
@@ -179,7 +184,7 @@ public class Player_movement : MonoBehaviour
     }
     public void PlayAudio() {
         Debug.Log("PLAY");
-        audioSource.Play();
+        jumpAudio.Play();
     }
     void modifyPhysics(){
         bool changingDirection = (direction.x > 0 && rb.velocity.x < 0) || (direction.x < 0 && rb.velocity.x > 0);
