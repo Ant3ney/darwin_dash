@@ -7,6 +7,9 @@ public class Math_Manager : MonoBehaviour
 {
     public int max_status_display = 2;
     public float status_display_timer;
+
+    public AudioSource correctSound;
+    public AudioSource incorrectSound;
     bool status_displayed;
     string mathTypeCache;
     Text answerInputFelid;
@@ -51,11 +54,13 @@ public class Math_Manager : MonoBehaviour
 
         if (userAnswer == answer.ToString()){
             status_text.text = "Correct!";
+            correctSound.Play();
             setStatusActive();
             displayNextProblem();
             Scene_Manager.add_time(1510);
         } else {
             status_text.text = "Incorrect!";
+            incorrectSound.Play();
             setStatusActive();
             displayNextProblem();
             Scene_Manager.add_time(-15);
