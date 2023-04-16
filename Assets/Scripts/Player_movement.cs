@@ -66,6 +66,7 @@ public class Player_movement : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "KillZone") {
             transform.position = respawnPoint;
+            Scene_Manager.add_time(-15);
         }
     }
 }

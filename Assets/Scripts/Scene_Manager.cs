@@ -28,25 +28,15 @@ public class Scene_Manager : MonoBehaviour
 
     private void Awake()
     {
-
-
-        if (SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            platformer_time++;
-        }
-
-
         manageSingleton();
     }
 
     public static void add_time( float time)
     {
             platformer_time += time;
-    
+   
     }
-    public static void start_timer_for_text() {
-        start_var ++;
-    }
+
     public static float getTime()
     {  
       return platformer_time;
@@ -69,14 +59,15 @@ public class Scene_Manager : MonoBehaviour
     void Update()
     {
 
-        if (platformer_time < 1 && platformer_time >0 && start_var >0 ) {
+        if (platformer_time < 1 && SceneManager.GetActiveScene().buildIndex > 1) {
             SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
         }
-        if (platformer_time > 0 && start_var >1)
+        if (platformer_time > 0 && SceneManager.GetActiveScene().buildIndex> 1)
         { platformer_time -= Time.deltaTime;
         }
         else
         {
+        
         }
 
         DisplayTime(platformer_time);
