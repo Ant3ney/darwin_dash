@@ -7,7 +7,7 @@ using System.Text;
 public class Send_High_Score : MonoBehaviour
 {
     public delegate void highScoreSent(string status);
-    public static event damageTaken onHighScoreSent;
+    public static event highScoreSent onHighScoreSent;
     void Start()
     {
         send_The_High_Score("ANT", 90001);
