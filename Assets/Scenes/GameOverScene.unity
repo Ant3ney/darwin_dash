@@ -621,7 +621,6 @@ GameObject:
   - component: {fileID: 1624327832}
   - component: {fileID: 1624327834}
   - component: {fileID: 1624327833}
-  - component: {fileID: 1624327835}
   m_Layer: 6
   m_Name: submit_button_text
   m_TagString: Untagged
@@ -693,18 +692,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624327831}
   m_CullTransparentMesh: 1
---- !u!114 &1624327835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624327831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef544d817f74ae94c8905226669f9229, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1655399497
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +950,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2146308399}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1047,7 +1034,7 @@ RectTransform:
   - {fileID: 1737680924}
   - {fileID: 730766621}
   m_Father: {fileID: 2146308399}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1302,8 +1289,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1762119101}
   - {fileID: 1975058621}
+  - {fileID: 1762119101}
   - {fileID: 1655399498}
   m_Father: {fileID: 1323711675}
   m_RootOrder: 0
