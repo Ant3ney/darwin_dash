@@ -380,10 +380,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7458727703652829572, guid: 0c52d1a917163014fbd493502bce8928, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458727703652829578, guid: 0c52d1a917163014fbd493502bce8928, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458727704667500257, guid: 0c52d1a917163014fbd493502bce8928, type: 3}
+      propertyPath: devMode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7458727704667500257, guid: 0c52d1a917163014fbd493502bce8928, type: 3}
@@ -1427,7 +1431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2073073110
 Transform:
   m_ObjectHideFlags: 0
