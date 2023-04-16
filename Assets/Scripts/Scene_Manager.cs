@@ -94,7 +94,7 @@ public class Scene_Manager : MonoBehaviour
         float Minuites = Mathf.FloorToInt(time_edit / 60);
         float Seconds = Mathf.FloorToInt(time_edit % 60);
 
-        timeText.text = string.Format("{0:00}:{1:00}", Minuites, Seconds);
+        if (timeText) timeText.text = string.Format("{0:00}:{1:00}", Minuites, Seconds);
 
     }
 
