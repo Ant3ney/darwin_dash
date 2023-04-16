@@ -22,6 +22,7 @@ public class Scene_Manager : MonoBehaviour
     public static float math_time ;
     [HideInInspector]
     public static float platformer_time;
+    public static bool submitted = true;
  
     
     public Text timeText;
@@ -36,6 +37,13 @@ public class Scene_Manager : MonoBehaviour
     {
             platformer_time += time;
    
+    }
+
+    public static void submitted_add() {
+        submitted = false;
+    }
+    public static bool submitted_check() {
+        return submitted;
     }
 
     public static void add_highScore(float score) {
