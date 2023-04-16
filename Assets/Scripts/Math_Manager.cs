@@ -39,6 +39,7 @@ public class Math_Manager : MonoBehaviour
         status_displayed = false;
 
         displayNextProblem();
+        selectInput();
     }
 
     void Update(){
@@ -93,7 +94,14 @@ public class Math_Manager : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             }
-        
+
+           
+            selectInput();
+    }
+
+    void selectInput(){
+        GameObject.Find("answer_input_container").GetComponent<InputField>().Select();
+        GameObject.Find("answer_input_container").GetComponent<InputField>().ActivateInputField();
     }
 
     public void submitAnswesbttn() {
