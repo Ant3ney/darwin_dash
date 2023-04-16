@@ -11,6 +11,7 @@ public class Send_High_Score : MonoBehaviour
     public delegate void highScoreSent(string status);
     public static event highScoreSent onHighScoreSent;
     Text answerInputFelid;
+    int totalnum; 
 
     void Start()
     {
@@ -27,10 +28,29 @@ public class Send_High_Score : MonoBehaviour
 
     public  void submitAnswer()
     {
+        if (answerInputFelid.text.Length == 3)
+        {
+            send_The_High_Score(answerInputFelid.text, Scene_Manager.get_highscore());
             Debug.Log("submitting answer" + " " + answerInputFelid.text + " " + Scene_Manager.get_highscore());
-            send_The_High_Score(answerInputFelid.text, Scene_Manager.get_highscore() );
+
+        }
+        else
+        {
+            Debug.Log("NOOOOOOOOOOOOOOOOOr" + " " + answerInputFelid.text + " " + Scene_Manager.get_highscore());
+        }
+
     }
 
+
+    public void Update() {
+        if (Input.anyKeyDown)
+        {
+            totalnum++;
+        }
+
+       
+            
+    }
 
 
 
