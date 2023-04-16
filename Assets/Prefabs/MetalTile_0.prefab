@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2554565931206026890}
   - component: {fileID: 1848934851313667536}
   - component: {fileID: 4578079475432720267}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MetalTile_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

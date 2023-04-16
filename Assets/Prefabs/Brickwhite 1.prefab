@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2906221172458033749}
   - component: {fileID: 2906221172458033748}
   - component: {fileID: 2906221172458033751}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Brickwhite 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

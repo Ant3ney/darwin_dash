@@ -639,6 +639,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneTile_0
       objectReference: {fileID: 0}
+    - target: {fileID: 2530685329770595064, guid: f60689ae6383c4248bda4b41dacb123e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2530685329770595066, guid: f60689ae6383c4248bda4b41dacb123e, type: 3}
       propertyPath: m_Size.x
       value: 81.92
