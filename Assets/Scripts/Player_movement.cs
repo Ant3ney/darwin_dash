@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 
 public class Player_movement : MonoBehaviour
@@ -67,6 +68,11 @@ public class Player_movement : MonoBehaviour
         if (collision.tag == "KillZone") {
             transform.position = respawnPoint;
             Scene_Manager.add_time(-15);
+        }
+
+        if(collision.tag == "Finsih_line")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
