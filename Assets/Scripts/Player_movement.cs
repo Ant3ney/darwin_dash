@@ -140,7 +140,7 @@ public class Player_movement : MonoBehaviour
         if(collision.tag == "Finsih_line")
         {
             int randomInt = Random.Range(2, SceneManager.sceneCountInBuildSettings - 2);
-            Scene_Manager.add_highScore(50 * SceneManager.GetActiveScene().buildIndex);
+            Scene_Manager.add_highScore(3.14 * Scene_Manager.getTime());
             SceneManager.LoadScene(randomInt);
         }
     }
