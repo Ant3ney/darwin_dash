@@ -83,7 +83,7 @@ public class Scene_Manager : MonoBehaviour
         // while(currScene == randomInt) {
         //     randomInt = Random.Range(2, numberOfLevels-1);
         // }
-        if (currScene == numberOfLevels-1) {
+        if (currScene == numberOfLevels-2) {
             currScene = 2;
         }
         else {
