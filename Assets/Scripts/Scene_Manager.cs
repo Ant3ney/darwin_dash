@@ -22,7 +22,7 @@ public class Scene_Manager : MonoBehaviour
     public static float math_time ;
     [HideInInspector]
     public static float platformer_time;
-    static bool start_var = false;
+    static int start_var = 0;
     
     public Text timeText;
 
@@ -32,7 +32,7 @@ public class Scene_Manager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            platformer_time =0;
+            platformer_time++;
         }
 
 
@@ -45,7 +45,7 @@ public class Scene_Manager : MonoBehaviour
     
     }
     public static void start_timer_for_text() {
-        start_var = true;
+        start_var ++;
     }
     public static float getTime()
     {  
@@ -69,10 +69,10 @@ public class Scene_Manager : MonoBehaviour
     void Update()
     {
 
-        if (platformer_time < 1 && platformer_time >0 && start_var ) {
+        if (platformer_time < 1 && platformer_time >0 && start_var >0 ) {
             SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
         }
-        if (platformer_time > 0 && start_var)
+        if (platformer_time > 0 && start_var >1)
         { platformer_time -= Time.deltaTime;
         }
         else

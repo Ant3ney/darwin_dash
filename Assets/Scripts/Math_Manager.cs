@@ -63,7 +63,7 @@ public class Math_Manager : MonoBehaviour
             correctSound.Play();
             setStatusActive();
             displayNextProblem();
-            Scene_Manager.add_time(1510);
+            Scene_Manager.add_time(15);
         } else {
             status_text.text = "Incorrect!";
             incorrectSound.Play();

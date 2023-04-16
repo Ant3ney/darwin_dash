@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Star_menu.unity
+    guid: 5eb8c8f1a800aee41963b8bcd704ee65
+  - enabled: 1
+    path: Assets/Scenes/MathQuestionScene.unity
+    guid: f0119b0d674ccd14b84013e1284ddada
+  - enabled: 0
+    path: Assets/Scenes/Pratice_secnce.unity
+    guid: 7358b39840354a442886659cb95483e5
+  - enabled: 1
+    path: Assets/Scenes/World_2-1.unity
+    guid: 09f7c9208d7e12c44af2e2e9a82177d4
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: 6b56d23e6bd5e264380a56d09f260eee
   m_configObjects: {}
