@@ -15,7 +15,7 @@ public class Send_High_Score : MonoBehaviour
 
     void Start()
     {
-        if(GameObject.Find("user_input_feild"))
+        if(GameObject.Find("user_input_feild") )
             answerInputFelid = GameObject.Find("user_input_feild").GetComponent<Text>();
     }
     void Awake(){
@@ -28,10 +28,13 @@ public class Send_High_Score : MonoBehaviour
 
     public  void submitAnswer()
     {
-        if (answerInputFelid.text.Length == 3)
+        if (answerInputFelid.text.Length == 3 && Scene_Manager.submitted_check())
         {
             send_The_High_Score(answerInputFelid.text, Scene_Manager.get_highscore());
             Debug.Log("submitting answer" + " " + answerInputFelid.text + " " + Scene_Manager.get_highscore());
+            Scene_Manager.submitted_add();
+
+
 
         }
         else
