@@ -96,11 +96,11 @@ public class Send_High_Score : MonoBehaviour
 
             if (webRequest.result == UnityWebRequest.Result.Success)
             {
-                SceneManager.LoadScene(0);
+                
                 Debug.Log("POST successful!");
                 Debug.Log("Response: " + webRequest.downloadHandler.text);
                 
-                    Debug.Log("Updateing status");
+
                     Status_Container_Obj.SetActive(true);
                     status_text.text = "High Score Submitted Successfully!";
                     showPostStatus = true;
@@ -108,8 +108,7 @@ public class Send_High_Score : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene(0);
-                Debug.Log("Updateing status 2");
+                
                 Debug.Log("POST failed. Error: " + webRequest.error);
                   Status_Container_Obj.SetActive(true);
                     status_text.text = "High Score Failed to Submitted!";
