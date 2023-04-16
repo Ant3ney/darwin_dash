@@ -244,6 +244,10 @@ PrefabInstance:
       propertyPath: timeText
       value: 
       objectReference: {fileID: 1985702615}
+    - target: {fileID: 3997750293557901935, guid: 1ea93b3d9f917084289b8b379024aa3f, type: 3}
+      propertyPath: Highscore
+      value: 
+      objectReference: {fileID: 1985702616}
     - target: {fileID: 5362402301081223678, guid: 1ea93b3d9f917084289b8b379024aa3f, type: 3}
       propertyPath: m_Name
       value: scene_manager (1)
@@ -666,6 +670,17 @@ PrefabInstance:
 --- !u!114 &1985702615 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1925297018061655091, guid: 9deb7773402ec2342b73788fbffa4641, type: 3}
+  m_PrefabInstance: {fileID: 1985702614}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1985702616 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8671866701912433113, guid: 9deb7773402ec2342b73788fbffa4641, type: 3}
   m_PrefabInstance: {fileID: 1985702614}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
