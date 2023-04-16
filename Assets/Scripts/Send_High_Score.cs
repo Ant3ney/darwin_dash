@@ -3,15 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Text;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Send_High_Score : MonoBehaviour
 {
     public delegate void highScoreSent(string status);
     public static event highScoreSent onHighScoreSent;
+    Text answerInputFelid;
+
     void Start()
     {
-        send_The_High_Score("ANT", 90001);
+        answerInputFelid = GameObject.Find("user_input_feild").GetComponent<Text>();
+
+        
     }
+
+
+
+    public void submitAnswer()
+    {
+            send_The_High_Score(answerInputFelid.text, Scene_Manager.get_highscore() );
+    }
+
+
+
+
+
 
     public void send_The_High_Score(string userInitials, float score)
     {
