@@ -127,8 +127,9 @@ public class Player_movement : MonoBehaviour
 
         if(collision.tag == "Finsih_line")
         {
+            int randomInt = Random.Range(2, SceneManager.sceneCountInBuildSettings - 2);
             Scene_Manager.add_highScore(50 * SceneManager.GetActiveScene().buildIndex);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(randomInt);
         }
     }
     void Jump(){
