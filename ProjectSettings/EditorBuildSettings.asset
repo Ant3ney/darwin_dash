@@ -4,5 +4,38 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Star_menu.unity
+    guid: 5eb8c8f1a800aee41963b8bcd704ee65
+  - enabled: 1
+    path: Assets/Scenes/MathQuestionScene.unity
+    guid: f0119b0d674ccd14b84013e1284ddada
+  - enabled: 1
+    path: Assets/Scenes/World_2-1.unity
+    guid: 09f7c9208d7e12c44af2e2e9a82177d4
+  - enabled: 1
+    path: Assets/Scenes/World_2-2.unity
+    guid: 64d49af62585d4ff7b3220ab5c4652c0
+  - enabled: 1
+    path: Assets/Scenes/World_2-3.unity
+    guid: 95d408c4b0662d946a0f264fc1b2b1b8
+  - enabled: 1
+    path: Assets/Scenes/World_2-4.unity
+    guid: 74e57cfe42d8bb54981ac1a2c087ea45
+  - enabled: 1
+    path: Assets/Scenes/World_2-5.unity
+    guid: 3b8f79cc3611244a1bfeb021d8957ccf
+  - enabled: 1
+    path: Assets/Scenes/World_2-6.unity
+    guid: 2a6d90cc0b6c8324a9c76466db64463f
+  - enabled: 1
+    path: Assets/Scenes/World_2-7.unity
+    guid: 81c33eb5ebea14a46aaa18c323b237eb
+  - enabled: 1
+    path: Assets/Scenes/World-2-8.unity
+    guid: 437e6c36869f345b5b1888893934757c
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: 6b56d23e6bd5e264380a56d09f260eee
   m_configObjects: {}
