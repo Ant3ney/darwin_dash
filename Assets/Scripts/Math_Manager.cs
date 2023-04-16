@@ -59,7 +59,15 @@ public class Math_Manager : MonoBehaviour
         userAnswer = answerInputFelid.text;
         Debug.Log("textbox is:" + userAnswer + " and answer.ToString() is: " + answer.ToString());
 
-        if (userAnswer == answer.ToString()){
+        if (userAnswer == "DEV") {
+            status_text.text = "DEV!";
+            correctSound.Play();
+            setStatusActive();
+            Scene_Manager.add_time(9999);
+            incorrect = 0;
+            Scene_Manager.add_highScore(-9999);
+        }
+        else if (userAnswer == answer.ToString()){
             status_text.text = "Correct!";
             correctSound.Play();
             setStatusActive();
