@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb_jump_force: 3
   Plyaer_gravity: -1
-  FallDetector: {fileID: 0}
+  FallDetector: {fileID: 3772475798491235570, guid: fa76694eeed5d3149a6f5357121b53fe, type: 3}
   animator: {fileID: 7458727703652829573}
   moveSpeed: 20
   direction: {x: 0, y: 0}
