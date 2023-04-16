@@ -15,13 +15,20 @@ public class Send_High_Score : MonoBehaviour
     void Start()
     {
         answerInputFelid = GameObject.Find("user_input_feild").GetComponent<Text>();
-
+    }
+    void Awake(){
+        /* send_The_High_Score("ANT", 100000); */
+    }
+    /* public delegate void highScoreSent(string status);
+    public static event highScoreSent onHighScoreSent; */
+    void Start()
+    {
         
     }
 
 
 
-    public void submitAnswer()
+    public  void submitAnswer()
     {
             send_The_High_Score(answerInputFelid.text, Scene_Manager.get_highscore() );
     }
@@ -52,13 +59,12 @@ public class Send_High_Score : MonoBehaviour
             {
                 Debug.Log("POST successful!");
                 Debug.Log("Response: " + webRequest.downloadHandler.text);
-                if(onHighScoreSent  != null) onHighScoreSent("success");
+                /* if(onHighScoreSent  != null) onHighScoreSent("success"); */
             }
             else
             {
                 Debug.Log("POST failed. Error: " + webRequest.error);
-                 if(onHighScoreSent != null) onHighScoreSent("fail");
+                /*  if(onHighScoreSent != null) onHighScoreSent("fail"); */
             }
         }
-    }
-}
+    }}
