@@ -78,15 +78,21 @@ public class Scene_Manager : MonoBehaviour
 
    public static void loadNewPlatformerScene(){
         int numberOfLevels = SceneManager.sceneCountInBuildSettings;
-        int randomInt = Random.Range(2, numberOfLevels-1);
+        // int randomInt = Random.Range(2, numberOfLevels-1);
         int currScene = SceneManager.GetActiveScene().buildIndex;
-        while(currScene == randomInt) {
-            randomInt = Random.Range(2, numberOfLevels-1);
+        // while(currScene == randomInt) {
+        //     randomInt = Random.Range(2, numberOfLevels-1);
+        // }
+        int nextScene;
+        if (currScene == numberOfLevels-1) {
+            nextScene = 2;
         }
-
+        else {
+            nextScene = currScene++;
+        }
         add_highScore(4f * Scene_Manager.getTime());
         
-        SceneManager.LoadScene(randomInt);
+        SceneManager.LoadScene(nextScene);
     }
 
     void Update()
