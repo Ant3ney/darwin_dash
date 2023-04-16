@@ -72,8 +72,7 @@ public class Scene_Manager : MonoBehaviour
 
         if (platformer_time < 1 && SceneManager.GetActiveScene().buildIndex > 1) {
             SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
-            GameObject highScoreSender = GameObject.Find("send_high_score");
-            if(highScoreSender) highScoreSender.GetComponent<Send_High_Score>().send_The_High_Score("ANT", 1000000);
+        
         }
         if (platformer_time > 0 && SceneManager.GetActiveScene().buildIndex> 1)
         { platformer_time -= Time.deltaTime;
