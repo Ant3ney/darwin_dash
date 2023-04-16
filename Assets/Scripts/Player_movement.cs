@@ -13,7 +13,12 @@ public class Player_movement : MonoBehaviour
     public float Plyaer_gravity = -1;
 
     private Rigidbody2D Player;
+    private Vector3 respawnPoint;
+    public GameObject FallDetector;
 
+    void Start() {
+        respawnPoint = transform.position;
+    }
 
     private void Awake()
     {
@@ -55,6 +60,12 @@ public class Player_movement : MonoBehaviour
         {
             Vector2 move = new Vector2(0, Vmovement + Player_jump_force);
             Player.AddForce(move * Player_speed);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.tag == "KillZone") {
+            transform.position = respawnPoint;
         }
     }
 }
