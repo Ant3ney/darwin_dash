@@ -34,7 +34,6 @@ public class Math_Manager : MonoBehaviour
         mathProblemText = GameObject.Find("math_problem").GetComponent<Text>();
         status_container = GameObject.Find("status_section");
         status_text = GameObject.Find("status_text").GetComponent<Text>();
-        Scene_Manager.start_timer_for_text();
         status_container.SetActive(false);
         status_displayed = false;
         
