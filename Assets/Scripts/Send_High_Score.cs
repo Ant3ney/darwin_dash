@@ -19,12 +19,9 @@ public class Send_High_Score : MonoBehaviour
     void Awake(){
         /* send_The_High_Score("ANT", 100000); */
     }
+    
     /* public delegate void highScoreSent(string status);
     public static event highScoreSent onHighScoreSent; */
-    void Start()
-    {
-        
-    }
 
 
 
