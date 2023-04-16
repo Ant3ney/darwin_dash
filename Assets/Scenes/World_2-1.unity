@@ -1920,6 +1920,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3308626210190915238, guid: 6aa0cd1d5728af84f83618f3d93b6d40, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308626210190915238, guid: 6aa0cd1d5728af84f83618f3d93b6d40, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308626210190915238, guid: 6aa0cd1d5728af84f83618f3d93b6d40, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308626210190915238, guid: 6aa0cd1d5728af84f83618f3d93b6d40, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7240683080783619171, guid: 6aa0cd1d5728af84f83618f3d93b6d40, type: 3}
       propertyPath: m_IsTrigger
       value: 1
