@@ -47,6 +47,8 @@ public class Send_High_Score : MonoBehaviour
         }
         else
         {
+            Status_Container_Obj.SetActive(true);
+            status_text.text = "You entered an invalid Initial";
             Debug.Log("NOOOOOOOOOOOOOOOOOr" + " " + answerInputFelid.text + " " + Scene_Manager.get_highscore());
         }
 
