@@ -5,9 +5,11 @@ using UnityEngine;
 public class popup_block : MonoBehaviour
 {
     BoxCollider2D boxCollider;
+    GameObject poped_up_block;
     
     void Start(){
         boxCollider = GetComponent<BoxCollider2D>();
+        poped_up_block = transform.GetChild(0).gameObject;
     }
 
     void Update(){
@@ -19,10 +21,17 @@ public class popup_block : MonoBehaviour
         	continue;
 
             // Get the distance between the two colliders
-            ColliderDistance2D colliderDistance = hit.Distance(boxCollider);
+            ColliderDistance2D colliderDistance = hit_collision.Distance(boxCollider);
 
-            if (colliderDistance.isOverlapped && hit.gameObject.tag == "Bullet")
-                bulletInMe(hit.gameObject.GetComponent<Bullet>());
+            if (colliderDistance.isOverlapped && hit_collision.gameObject.tag == "Player")
+                poped_up_block.SetActive(true);
         }
+    }
+
+     private void OnDrawGizmos() {
+        Color gizmoColor = Color.yellow;
+        Vector3 size = 2 * Vector3.one;
+        Gizmos.color = gizmoColor;
+        Gizmos.DrawCube(transform.position, size);
     }
 }
