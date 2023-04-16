@@ -63,12 +63,14 @@ public class Math_Manager : MonoBehaviour
             setStatusActive();
             displayNextProblem();
             Scene_Manager.add_time(15);
+            Scene_Manager.add_highScore(100);
         } else {
             status_text.text = "Incorrect!";
             incorrectSound.Play();
             setStatusActive();
             displayNextProblem();
             Scene_Manager.add_time(-15);
+            Scene_Manager.add_highScore(-140);
             incorrect--;
 
             if (incorrect == 0 && timer > 0) {

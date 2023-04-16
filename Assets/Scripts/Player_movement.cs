@@ -68,6 +68,7 @@ public class Player_movement : MonoBehaviour
         if (collision.tag == "KillZone") {
             transform.position = respawnPoint;
             Scene_Manager.add_time(-15);
+            Scene_Manager.add_highScore(-140);
         }
 
         if(collision.tag == "Finsih_line")

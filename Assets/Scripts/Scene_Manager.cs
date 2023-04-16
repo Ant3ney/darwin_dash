@@ -16,7 +16,7 @@ public class Scene_Manager : MonoBehaviour
     [HideInInspector]
     public static string mathType = "addition_1";
     [HideInInspector]
-    public static float highScore = 0;
+    public static float highScore ;
     static string HIGH_SCORE_KEY = "highScore";
     [HideInInspector]
     public static float math_time ;
@@ -25,6 +25,7 @@ public class Scene_Manager : MonoBehaviour
  
     
     public Text timeText;
+    public Text Highscore;
 
     private void Awake()
     {
@@ -36,6 +37,16 @@ public class Scene_Manager : MonoBehaviour
             platformer_time += time;
    
     }
+
+    public static void add_highScore(float score) {
+         highScore += score;
+    }
+
+
+    public static float get_highscore() {
+        return highScore;
+    }
+
 
     public static float getTime()
     {  
@@ -71,6 +82,8 @@ public class Scene_Manager : MonoBehaviour
         }
 
         DisplayTime(platformer_time);
+        DisplayHighscorefloat(highScore);
+
 
 
     }
@@ -89,6 +102,13 @@ public class Scene_Manager : MonoBehaviour
 
     }
 
+    void DisplayHighscorefloat (score)
+    {
+
+         HighScore.text = string.Format("000}:{100,000}", score);
+
     }
+
+}
 
 
