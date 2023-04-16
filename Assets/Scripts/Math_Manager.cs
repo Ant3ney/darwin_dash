@@ -29,7 +29,8 @@ public class Math_Manager : MonoBehaviour
     void Start(){
         //TODO: get mathType from Scene_Manager via method call
         mathTypeCache = Scene_Manager.mathType;
-
+        int incorrect = 3;
+        Scene_Manager.set_HighScore(0);
         answerInputFelid = GameObject.Find("user_input_feild").GetComponent<Text>();
         mathProblemText = GameObject.Find("math_problem").GetComponent<Text>();
         status_container = GameObject.Find("status_section");

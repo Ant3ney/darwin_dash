@@ -54,6 +54,10 @@ public class Scene_Manager : MonoBehaviour
         return highScore;
     }
 
+    public static void set_HighScore(float i) {
+        highScore = i;
+    }
+
 
     public static float getTime()
     {  
