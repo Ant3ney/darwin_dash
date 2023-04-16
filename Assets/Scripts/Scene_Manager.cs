@@ -103,10 +103,10 @@ public class Scene_Manager : MonoBehaviour
     }
 
     void DisplayHighscorefloat(float score){
-
-
-        if (Highscore) Highscore.text = string.Format("{000}:{1,000}", score);
-    }
+        if (Highscore != null) {
+            Highscore.text = string.Format("{0:000.000}", score) ;
+        }
+}
 
 }
 
