@@ -19,8 +19,8 @@ public class Math_Manager : MonoBehaviour
     int question1;
     int question2;
     int answer;
-    int incorrect = 1;
-    float timer = Scene_Manager.getTime();
+    int incorrect = 3;
+    float globaltimer = Scene_Manager.getTime();
 
     string userAnswer;
     GameObject status_container;
@@ -73,11 +73,11 @@ public class Math_Manager : MonoBehaviour
             Scene_Manager.add_highScore(-140);
             incorrect--;
 
-            if (incorrect == 0 && timer > 0) {
+            if (incorrect == 0 && globaltimer > 0) {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                   }
-            else if (incorrect == 0) {
-                Scene_Manager.add_time(60);
+            else if (incorrect == 0 && globaltimer == 0) {
+                Scene_Manager.add_time(45);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             }
