@@ -36,8 +36,6 @@ public class Math_Manager : MonoBehaviour
         status_text = GameObject.Find("status_text").GetComponent<Text>();
         status_container.SetActive(false);
         status_displayed = false;
-        
-       
 
         displayNextProblem();
     }
