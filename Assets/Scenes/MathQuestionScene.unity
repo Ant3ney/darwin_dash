@@ -631,7 +631,7 @@ PrefabInstance:
     - target: {fileID: 3997750293557901935, guid: 1ea93b3d9f917084289b8b379024aa3f, type: 3}
       propertyPath: timeText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 792941773}
     - target: {fileID: 3997750293557901935, guid: 1ea93b3d9f917084289b8b379024aa3f, type: 3}
       propertyPath: Highscore
       value: 
@@ -1588,7 +1588,6 @@ MonoBehaviour:
   status_display_timer: 0
   correctSound: {fileID: 1765199041}
   incorrectSound: {fileID: 1765199040}
-  textbox: {fileID: 711742756}
 --- !u!4 &1765199039
 Transform:
   m_ObjectHideFlags: 0
