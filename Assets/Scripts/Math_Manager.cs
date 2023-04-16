@@ -41,6 +41,10 @@ public class Math_Manager : MonoBehaviour
     }
 
     void Update(){
+
+
+       submitAnswesbttn();
+            
         if (status_displayed){
             status_display_timer += Time.deltaTime;
             if (status_display_timer >= max_status_display){
@@ -82,7 +86,14 @@ public class Math_Manager : MonoBehaviour
         
     }
 
-    public void setStatusActive(){
+    public void submitAnswesbttn() {
+        if (Input.GetKeyDown(KeyCode.Return)) {
+            submitAnswer();
+        }
+}
+
+
+public void setStatusActive(){
          status_container.SetActive(true);
             status_displayed = true;
     }
