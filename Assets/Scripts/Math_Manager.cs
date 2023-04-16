@@ -66,6 +66,7 @@ public class Math_Manager : MonoBehaviour
             Scene_Manager.add_time(9999);
             incorrect = 0;
             Scene_Manager.add_highScore(-9999);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else if (userAnswer == answer.ToString()){
             status_text.text = "Correct!";
