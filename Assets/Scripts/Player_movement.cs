@@ -127,6 +127,7 @@ public class Player_movement : MonoBehaviour
 
         if(collision.tag == "Finsih_line")
         {
+            Scene_Manager.add_highScore(50 * SceneManager.GetActiveScene().buildIndex);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
