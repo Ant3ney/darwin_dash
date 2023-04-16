@@ -14,7 +14,8 @@ public class Player_movement : MonoBehaviour
     public float Plyaer_gravity = -1;
     private Vector3 respawnPoint;
     public GameObject FallDetector;
-
+    public AudioClip audioClip;
+    private AudioSource audioSource;
     public Animator animator;
 
     [Header("Horizontal Movement")]
@@ -47,7 +48,11 @@ public class Player_movement : MonoBehaviour
     public string playerModel = "darwin";
 
     void Start() {
-        
+
+        if(!TryGetComponent<AudioSource>(out audioSource)) {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        audioSource.clip = audioClip;
         respawnPoint = transform.position;
         rb = GetComponent<Rigidbody2D>();
         playerPreview = GetComponent<SpriteRenderer>();
@@ -172,6 +177,7 @@ public class Player_movement : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         jumpTimer = 0;
+        audioSource.clip = audioSource.Play();
     }
     void modifyPhysics(){
         bool changingDirection = (direction.x > 0 && rb.velocity.x < 0) || (direction.x < 0 && rb.velocity.x > 0);
