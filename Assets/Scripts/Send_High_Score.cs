@@ -25,7 +25,6 @@ public class Send_High_Score : MonoBehaviour
     public static event highScoreSent onHighScoreSent; */
 
 
-
     public  void submitAnswer()
     {
             Debug.Log("submitting answer" + " " + answerInputFelid.text + " " + Scene_Manager.get_highscore());
