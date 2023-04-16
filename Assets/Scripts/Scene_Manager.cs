@@ -23,7 +23,6 @@ public class Scene_Manager : MonoBehaviour
     [HideInInspector]
     public static float platformer_time;
     public static bool submitted = true;
- 
     
     public Text timeText;
     public Text Highscore;
@@ -74,9 +73,16 @@ public class Scene_Manager : MonoBehaviour
     }
 
    public static void loadNewPlatformerScene(){
-        Player_movement player = GameObject.Find("player").GetComponent<Player_movement>();
-        if (Random.Range(0, 2) == 0) player.makeDarwin();
-        else player.makeKnome();
+        int numberOfLevels = SceneManager.sceneCountInBuildSettings;
+        int randomInt = Random.Range(2, numberOfLevels-1);
+        int currScene = SceneManager.GetActiveScene().buildIndex;
+        while(currScene == randomInt) {
+            randomInt = Random.Range(2, numberOfLevels-1);
+        }
+
+        add_highScore(4f * Scene_Manager.getTime());
+        
+        SceneManager.LoadScene(randomInt);
     }
 
     void Update()
