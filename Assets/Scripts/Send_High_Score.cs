@@ -6,11 +6,14 @@ using System.Text;
 
 public class Send_High_Score : MonoBehaviour
 {
-    public delegate void highScoreSent(string status);
-    public static event highScoreSent onHighScoreSent;
+    void Awake(){
+        /* send_The_High_Score("ANT", 100000); */
+    }
+    /* public delegate void highScoreSent(string status);
+    public static event highScoreSent onHighScoreSent; */
     void Start()
     {
-        send_The_High_Score("ANT", 90001);
+        
     }
 
     public void send_The_High_Score(string userInitials, float score)
@@ -34,12 +37,12 @@ public class Send_High_Score : MonoBehaviour
             {
                 Debug.Log("POST successful!");
                 Debug.Log("Response: " + webRequest.downloadHandler.text);
-                if(onHighScoreSent  != null) onHighScoreSent("success");
+                /* if(onHighScoreSent  != null) onHighScoreSent("success"); */
             }
             else
             {
                 Debug.Log("POST failed. Error: " + webRequest.error);
-                 if(onHighScoreSent != null) onHighScoreSent("fail");
+                /*  if(onHighScoreSent != null) onHighScoreSent("fail"); */
             }
         }
     }
