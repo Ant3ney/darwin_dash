@@ -73,7 +73,11 @@ public class Scene_Manager : MonoBehaviour
         }
     }
 
-   
+   public static void loadNewPlatformerScene(){
+        Player_movement player = GameObject.Find("player").GetComponent<Player_movement>();
+        if (Random.Range(0, 2) == 0) player.makeDarwin();
+        else player.makeKnome();
+    }
 
     void Update()
     {
