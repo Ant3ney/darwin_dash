@@ -1850,6 +1850,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 658854814514544867, guid: 9deb7773402ec2342b73788fbffa4641, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -20.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 658854814514544867, guid: 9deb7773402ec2342b73788fbffa4641, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 40.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3431292614131076554, guid: 9deb7773402ec2342b73788fbffa4641, type: 3}
       propertyPath: m_Name
       value: Canvas (1)
