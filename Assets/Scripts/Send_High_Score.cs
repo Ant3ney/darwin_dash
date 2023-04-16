@@ -10,13 +10,24 @@ public class Send_High_Score : MonoBehaviour
 {
     public delegate void highScoreSent(string status);
     public static event highScoreSent onHighScoreSent;
+    bool showPostStatus = false;
+    public float maxStatusTimer = 2f;
+    float statusTimer = 0f;
     Text answerInputFelid;
+
+    public GameObject Status_Container_Obj;
+    public Text status_text;
     int totalnum; 
 
     void Start()
     {
         if(GameObject.Find("user_input_feild") )
             answerInputFelid = GameObject.Find("user_input_feild").GetComponent<Text>();
+
+        if(Status_Container_Obj)
+        {
+            Status_Container_Obj.SetActive(false);
+        }
     }
     void Awake(){
         /* send_The_High_Score("ANT", 100000); */
@@ -33,9 +44,6 @@ public class Send_High_Score : MonoBehaviour
             send_The_High_Score(answerInputFelid.text, Scene_Manager.get_highscore());
             Debug.Log("submitting answer" + " " + answerInputFelid.text + " " + Scene_Manager.get_highscore());
             Scene_Manager.submitted_add();
-
-
-
         }
         else
         {
@@ -49,10 +57,20 @@ public class Send_High_Score : MonoBehaviour
         if (Input.anyKeyDown)
         {
             totalnum++;
-        }
+        }   
 
-       
-            
+        if (showPostStatus)
+        {
+            Debug.Log("showing post status");
+            statusTimer += Time.deltaTime;
+            if (statusTimer >= maxStatusTimer)
+            {
+                Status_Container_Obj.SetActive(false);
+                showPostStatus = false;
+                statusTimer = 0;
+                SceneManager.LoadScene(0);
+            }
+        }
     }
 
 
@@ -78,14 +96,24 @@ public class Send_High_Score : MonoBehaviour
 
             if (webRequest.result == UnityWebRequest.Result.Success)
             {
+                
                 Debug.Log("POST successful!");
                 Debug.Log("Response: " + webRequest.downloadHandler.text);
-                /* if(onHighScoreSent  != null) onHighScoreSent("success"); */
+                
+
+                    Status_Container_Obj.SetActive(true);
+                    status_text.text = "High Score Submitted Successfully!";
+                    showPostStatus = true;
+                
             }
             else
             {
+                
                 Debug.Log("POST failed. Error: " + webRequest.error);
-                /*  if(onHighScoreSent != null) onHighScoreSent("fail"); */
+                  Status_Container_Obj.SetActive(true);
+                    status_text.text = "High Score Failed to Submitted!";
+                    showPostStatus = true;
+                
             }
         }
     }}
