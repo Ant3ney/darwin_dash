@@ -21,31 +21,36 @@ public class Scene_Manager : MonoBehaviour
     [HideInInspector]
     public static float math_time ;
     [HideInInspector]
-    public static float platformer_time = -3;
+    public static float platformer_time;
+    static bool start_var = false;
     
     public Text timeText;
 
     private void Awake()
     {
+
+
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            platformer_time =0;
+        }
+
+
         manageSingleton();
     }
 
-    public static void add_time(float time)
+    public static void add_time( float time)
     {
             platformer_time += time;
     
-    } 
-
-    public static void getTime(string gameType)
-    {
-        if (gameType == "math")
-        {
-            math_time = PlayerPrefs.GetFloat("math_time");
-        }
-        else if (gameType == "platformer")
-        {
-            platformer_time = PlayerPrefs.GetFloat("platformer_time");
-        }
+    }
+    public static void start_timer_for_text() {
+        start_var = true;
+    }
+    public static float getTime()
+    {  
+      return platformer_time;
+      
     }
 
     void manageSingleton(){
@@ -64,13 +69,10 @@ public class Scene_Manager : MonoBehaviour
     void Update()
     {
 
-        if (platformer_time == -3) {
-            platformer_time = 140f;
-        }
-        if (platformer_time < 1 && platformer_time >0) {
+        if (platformer_time < 1 && platformer_time >0 && start_var ) {
             SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
         }
-        if (platformer_time > 0)
+        if (platformer_time > 0 && start_var)
         { platformer_time -= Time.deltaTime;
         }
         else
