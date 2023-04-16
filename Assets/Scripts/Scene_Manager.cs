@@ -22,7 +22,7 @@ public class Scene_Manager : MonoBehaviour
     public static float math_time ;
     [HideInInspector]
     public static float platformer_time;
-    static int start_var = 0;
+ 
     
     public Text timeText;
 

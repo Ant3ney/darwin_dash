@@ -19,7 +19,7 @@ public class Math_Manager : MonoBehaviour
     int question1;
     int question2;
     int answer;
-    int incorrect = 3;
+    int incorrect = 1;
     float timer = Scene_Manager.getTime();
 
     string userAnswer;
