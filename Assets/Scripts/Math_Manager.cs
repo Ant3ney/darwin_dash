@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Math_Manager : MonoBehaviour
 {
@@ -17,6 +19,8 @@ public class Math_Manager : MonoBehaviour
     int question1;
     int question2;
     int answer;
+    int incorrect = 3;
+    float timer = Scene_Manager.getTime();
 
     string userAnswer;
     GameObject status_container;
@@ -30,9 +34,11 @@ public class Math_Manager : MonoBehaviour
         mathProblemText = GameObject.Find("math_problem").GetComponent<Text>();
         status_container = GameObject.Find("status_section");
         status_text = GameObject.Find("status_text").GetComponent<Text>();
-
+        Scene_Manager.start_timer_for_text();
         status_container.SetActive(false);
         status_displayed = false;
+        
+       
 
         displayNextProblem();
     }
@@ -64,7 +70,17 @@ public class Math_Manager : MonoBehaviour
             setStatusActive();
             displayNextProblem();
             Scene_Manager.add_time(-15);
-        }
+            incorrect--;
+
+            if (incorrect == 0 && timer > 0) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                  }
+            else if (incorrect == 0) {
+                Scene_Manager.add_time(60);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            }
+        
     }
 
     public void setStatusActive(){
