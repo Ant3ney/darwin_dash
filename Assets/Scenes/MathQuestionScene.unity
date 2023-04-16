@@ -1788,7 +1788,6 @@ GameObject:
   - component: {fileID: 2020762268}
   - component: {fileID: 2020762270}
   - component: {fileID: 2020762269}
-  - component: {fileID: 2020762271}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
