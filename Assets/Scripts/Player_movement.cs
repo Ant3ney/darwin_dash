@@ -23,11 +23,14 @@ public class Player_movement : MonoBehaviour
     public float moveSpeed = 10f;
     public Vector2 direction;
     bool facingRight = true;
+    public bool pressingScreenRight = false;
+    public bool pressingScreenLeft = false;
 
     [Header("Vertail Movement")]
     public float jumpForce = 8f;
-    float jumpTimer; 
+    float jumpTimer;
     public float jumpDelay = 0.25f;
+    public bool pressingScreenJump = false;
 
     [Header("Components")]
     public Rigidbody2D rb;
@@ -48,26 +51,30 @@ public class Player_movement : MonoBehaviour
     public bool devMode = false;
     public string playerModel = "darwin";
 
-    void Start() {
+    void Start()
+    {
 
         AudioSource[] audioSources = GetComponents<AudioSource>();
         jumpAudio = audioSources[0];
         deathAudio = audioSources[1];
-        
+
         respawnPoint = transform.position;
         rb = GetComponent<Rigidbody2D>();
         playerPreview = GetComponent<SpriteRenderer>();
         playerPreview.enabled = false;
-        
-        if (devMode) {
-            if(playerModel == "darwin"){
+
+        if (devMode)
+        {
+            if (playerModel == "darwin")
+            {
                 animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("darwin_turtle/darwin", typeof(RuntimeAnimatorController));
             }
-            else{
+            else
+            {
                 animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("knome_animations/knome_animations", typeof(RuntimeAnimatorController));
             }
         }
-        
+
         if (Random.Range(0, 2) == 0) makeDarwin();
         else makeKnome();
     }
@@ -78,7 +85,8 @@ public class Player_movement : MonoBehaviour
         Camer_to_bound = Camera.main;
     }
 
-    private void Update() { 
+    private void Update()
+    {
         /* The old way of moving the rb
             Vector2 position = rb.position;
             Vector2 LeftEdge = Camer_to_bound.ScreenToWorldPoint(Vector2.zero);
@@ -90,29 +98,45 @@ public class Player_movement : MonoBehaviour
 
         onGround = Physics2D.Raycast(transform.position + colliderOffset, Vector2.down, groundLength, groundLayer) || Physics2D.Raycast(transform.position - colliderOffset, Vector2.down, groundLength, groundLayer);
 
-        if(Input.GetButtonDown("Jump")){
+
+        if (Input.GetButtonDown("Jump") || pressingScreenJump)
+        {
             jumpTimer = Time.time + jumpDelay;
-            
         }
 
-        direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        float horizontal = Input.GetAxis("Horizontal");
+        if (pressingScreenLeft)
+        {
+            horizontal = -1;
+        }
+        else if (pressingScreenRight)
+        {
+            horizontal = 1;
+        }
+
+
+
+        direction = new Vector2(horizontal, Input.GetAxis("Vertical"));
     }
 
-    public void makeDarwin(){
+    public void makeDarwin()
+    {
         animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("darwin_turtle/darwin", typeof(RuntimeAnimatorController));
     }
 
-    public void makeKnome(){
+    public void makeKnome()
+    {
         animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("knome_animations/knome_animations", typeof(RuntimeAnimatorController));
     }
 
-    void moveCharacter(float horizontal){
+    void moveCharacter(float horizontal)
+    {
         rb.AddForce(Vector2.right * horizontal * moveSpeed);
-        
-        if((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight))
+
+        if ((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight))
             Flip();
 
-        if(Mathf.Abs(rb.velocity.x) > maxSpeed)
+        if (Mathf.Abs(rb.velocity.x) > maxSpeed)
             rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
     }
 
@@ -120,9 +144,9 @@ public class Player_movement : MonoBehaviour
 
     void FixedUpdate()
     {
-         moveCharacter(direction.x);
-       
-        if(jumpTimer > Time.time && onGround) Jump();
+        moveCharacter(direction.x);
+
+        if (jumpTimer > Time.time && onGround) Jump();
 
         animator.SetFloat("horizontal", Mathf.Abs(rb.velocity.x));
         animator.SetFloat("vertical", rb.velocity.y);
@@ -146,19 +170,21 @@ public class Player_movement : MonoBehaviour
             rb.AddForce(move * moveSpeed);
         }
     }
-    
-    
 
 
-    void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.tag == "KillZone") {
+
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "KillZone")
+        {
             transform.position = respawnPoint;
             deathAudio.Play();
             Scene_Manager.add_time(-15);
             Scene_Manager.add_highScore(-100);
         }
 
-        if(collision.tag == "Finsih_line")
+        if (collision.tag == "Finsih_line")
         {
             /* int numberOfLevels = SceneManager.sceneCountInBuildSettings;
             int randomInt = Random.Range(2, numberOfLevels-1);
@@ -175,42 +201,50 @@ public class Player_movement : MonoBehaviour
             Scene_Manager.loadNewPlatformerScene();
         }
     }
-    void Jump(){
+    void Jump()
+    {
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         jumpTimer = 0;
         PlayAudio();
 
     }
-    public void PlayAudio() {
+    public void PlayAudio()
+    {
         Debug.Log("PLAY");
         jumpAudio.Play();
     }
-    void modifyPhysics(){
+    void modifyPhysics()
+    {
         bool changingDirection = (direction.x > 0 && rb.velocity.x < 0) || (direction.x < 0 && rb.velocity.x > 0);
-        
-        if(onGround){
-            if(Mathf.Abs(direction.x) < 0.4f || changingDirection)
+
+        if (onGround)
+        {
+            if (Mathf.Abs(direction.x) < 0.4f || changingDirection)
                 rb.drag = linearDrag;
             else
                 rb.drag = 0;
 
             rb.gravityScale = 0;
-        } else{
+        }
+        else
+        {
             rb.gravityScale = gravity;
             rb.drag = linearDrag * 0.15f;
-            if(rb.velocity.y < 0)
+            if (rb.velocity.y < 0)
                 rb.gravityScale = gravity * fallMultiplier;
-            else if(rb.velocity.y > 0 && !Input.GetButton("Jump"))
+            else if (rb.velocity.y > 0 && !(Input.GetButton("Jump") || pressingScreenJump))
                 rb.gravityScale = gravity * (fallMultiplier / 2);
         }
     }
-    void Flip(){
+    void Flip()
+    {
         facingRight = !facingRight;
         transform.rotation = Quaternion.Euler(0, facingRight ? 0 : 180, 0);
     }
 
-    private void OnDrawGizmos(){
+    private void OnDrawGizmos()
+    {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position + colliderOffset, transform.position + colliderOffset + Vector3.down * groundLength);
         Gizmos.DrawLine(transform.position - colliderOffset, transform.position - colliderOffset + Vector3.down * groundLength);
